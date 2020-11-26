@@ -1,9 +1,14 @@
 package com.example.shoppinglist.ui.shoppinglist
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
+import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.shoppinglist.R
 import com.example.shoppinglist.data.db.entities.ShoppingItem
 import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
@@ -30,5 +35,11 @@ class AddShoppingDialog(context: Context, var addDialogListener: AddDialogListen
         tvCancel.setOnClickListener {
             cancel()
         }
+
+        tvAddImage.setOnClickListener {
+
+        }
+
+
     }
 }
