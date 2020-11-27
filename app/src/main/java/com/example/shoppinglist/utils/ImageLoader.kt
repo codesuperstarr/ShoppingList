@@ -2,19 +2,21 @@ package com.example.shoppinglist.utils
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.core.app.ActivityCompat
 
-class ImageLoader {
 
-    const val REQUEST_IMAGE_GET = 1
+
+const val REQUEST_IMAGE_GET = 1
+class ImageLoader {
 
     fun selectImage() {
         val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
             type = "image/*"
         }
-        if (intent.resolveActivity(packageManager) != null) {
+        if (intent.resolveActivity(PackageManager) != null) {
             ActivityCompat.startActivityForResult(intent, REQUEST_IMAGE_GET)
         }
     }
