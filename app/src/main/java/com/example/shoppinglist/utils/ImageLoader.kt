@@ -9,7 +9,7 @@ import androidx.core.app.ActivityCompat
 
 
 
-const val REQUEST_IMAGE_GET = 1
+/*const val REQUEST_IMAGE_GET = 1
 class ImageLoader {
 
     fun selectImage() {
@@ -29,4 +29,4 @@ class ImageLoader {
             ...
         }
     }
-}
+}*/
