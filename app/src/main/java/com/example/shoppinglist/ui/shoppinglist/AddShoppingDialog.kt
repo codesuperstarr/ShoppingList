@@ -1,17 +1,17 @@
 package com.example.shoppinglist.ui.shoppinglist
 
 
+
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import com.example.shoppinglist.R
 import com.example.shoppinglist.data.db.entities.ShoppingItem
+import com.example.shoppinglist.utils.MyBitMapLoader
 import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
 
-class AddShoppingDialog(context: Context, var addDialogListener: AddDialogListener): AppCompatDialog(context) {
-
+class AddShoppingDialog(context: Context, var addDialogListener: AddDialogListener, var imageLoader: MyBitMapLoader): AppCompatDialog(context) {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.dialog_add_shopping_item)
 
@@ -31,8 +31,6 @@ class AddShoppingDialog(context: Context, var addDialogListener: AddDialogListen
         tvCancel.setOnClickListener {
             cancel()
         }
-
     }
-
 
 }

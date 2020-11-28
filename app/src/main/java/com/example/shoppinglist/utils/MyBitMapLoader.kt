@@ -4,29 +4,22 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.example.shoppinglist.R
-import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
 
-class ImageLoader: AppCompatActivity(){
-
+class MyBitMapLoader:AppCompatActivity() {
     lateinit var imageView: ImageView
     lateinit var imageButton: Button
-    private val pickImage = 100
-    private var imageUri: Uri? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_add_shopping_item)
+
+
         imageButton.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
@@ -34,7 +27,7 @@ class ImageLoader: AppCompatActivity(){
 
                     val permisssions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
 
-                    requestPermissions(permisssions, PERMISSION_CODE)
+                    requestPermissions(permisssions,PERMISSION_CODE)
                 }else{
                     pickImageFromGallery()
                 }
@@ -48,7 +41,7 @@ class ImageLoader: AppCompatActivity(){
     private fun pickImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type ="image/*"
-        startActivityForResult(intent, IMAGE_PICK_CODE)
+        startActivityForResult(intent,IMAGE_PICK_CODE)
     }
 
     companion object {
@@ -77,7 +70,6 @@ class ImageLoader: AppCompatActivity(){
             }
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)

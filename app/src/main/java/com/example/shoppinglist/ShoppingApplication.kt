@@ -1,6 +1,7 @@
 package com.example.shoppinglist
 
 import android.app.Application
+import android.os.Bundle
 import com.example.shoppinglist.data.db.ShoppingDatabase
 import com.example.shoppinglist.data.repositories.ShoppingRepository
 import com.example.shoppinglist.ui.shoppinglist.ShoppingViewModelFactory
